@@ -59,7 +59,8 @@ export default function SettingsScreen({
         ) : null}
 
         <Text style={styles.hint}>
-          El ESP32 publica datos en ws://{valid ? value.trim() : "IP"}:81
+          El ESP32 publica datos en ws://{valid ? value.trim() : "IP"}:81,
+          cifrados con AES-256-GCM.
         </Text>
 
         <Pressable
@@ -80,6 +81,7 @@ export default function SettingsScreen({
             valueColor={streamMode ? colors.ok : colors.muted}
           />
           <InfoRow label="Puerto WebSocket" value="81" />
+          <InfoRow label="Cifrado" value="AES-256-GCM" />
         </View>
 
         <Pressable style={styles.backBtn} onPress={onBack}>
@@ -109,8 +111,10 @@ const styles = StyleSheet.create({
   },
   title: {
     color: colors.text,
-    fontSize: 22,
-    fontWeight: "800",
+    fontSize: 30,
+    letterSpacing: -0.5,
+    marginTop: spacing.md,
+    fontWeight: "700",
   },
   subtitle: {
     color: colors.muted,
@@ -174,7 +178,7 @@ const styles = StyleSheet.create({
   primaryText: {
     color: "#FFFFFF",
     fontSize: 15,
-    fontWeight: "800",
+    fontWeight: "700",
   },
   backBtn: {
     marginTop: spacing.lg,

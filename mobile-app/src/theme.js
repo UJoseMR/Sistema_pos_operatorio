@@ -1,17 +1,20 @@
+// Paleta: beige claro + azul oscuro + rojo
 export const colors = {
-  bg: "#0B1220",
-  card: "#131C2E",
-  cardSoft: "#1B2740",
-  border: "#22304A",
-  text: "#EAF0FA",
-  muted: "#8CA0BF",
-  accent: "#3B82F6",
-  bpm: "#F43F5E",
-  spo2: "#38BDF8",
-  temp: "#FB923C",
-  ok: "#22C55E",
-  warn: "#F59E0B",
-  danger: "#EF4444",
+  bg: "#F3ECE1",
+  card: "#FBF7F0",
+  cardSoft: "#F0E8DB",
+  border: "#E6DCCC",
+  text: "#1C2E4A",
+  textSoft: "#4B5B75",
+  muted: "#8A8F9C",
+  accent: "#C8373B",
+  accentSoft: "#F6E1DC",
+  bpm: "#C8373B",
+  spo2: "#2F5F9E",
+  temp: "#B07A3C",
+  ok: "#2E7D5B",
+  warn: "#B07A3C",
+  danger: "#C8373B",
 };
 
 export const spacing = {
@@ -23,7 +26,7 @@ export const spacing = {
 };
 
 export const radius = {
-  sm: 10,
-  md: 16,
+  sm: 12,
+  md: 18,
   lg: 24,
 };

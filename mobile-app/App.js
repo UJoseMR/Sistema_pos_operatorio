@@ -29,11 +29,12 @@ export default function App() {
 
   const { status, reading, lastAt } = useEsp32(ip);
 
-  // Ref con la ultima lectura para que el sincronizador de Firebase la lea.
+  // Ref con la ultima lectura (y cuando llego) para que el sincronizador de
+  // Firebase la lea y descarte lecturas viejas.
   const readingRef = useRef(null);
   useEffect(() => {
-    readingRef.current = reading;
-  }, [reading]);
+    readingRef.current = reading ? { ...reading, receivedAt: lastAt } : null;
+  }, [reading, lastAt]);
 
   const { streamMode, lastSavedAt, error } = useFirebaseSync(readingRef, !!ip);
 
@@ -50,7 +51,7 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.root}>
-      <StatusBar style="light" />
+      <StatusBar style="dark" />
       {tab === "monitor" ? (
         <MonitorScreen
           reading={reading}
