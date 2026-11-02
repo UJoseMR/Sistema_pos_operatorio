@@ -1,0 +1,10 @@
+node_modules/
+dist/
+dist-check/
+.expo/
+*.log
+
+# Variables de entorno (secretos) - NO subir
+.env
+.env.*
+!.env.example
