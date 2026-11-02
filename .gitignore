@@ -1,0 +1,13 @@
+node_modules/
+dist/
+dist-check/
+.expo/
+*.log
+
+# Variables de entorno (secretos) - NO subir
+.env
+.env.*
+!.env.example
+
+# Clave de cifrado del ESP32 - NO subir
+esp32/esp32_sensores/secreto.h
